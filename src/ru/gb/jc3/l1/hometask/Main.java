@@ -30,22 +30,26 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
         // Задание 2
+//        String[] someArray = {"apple", "orange", "lemon", "banana"};
+//        ArrayList<String> someList = new ArrayList<String>();
+//
+//        Collections.addAll(someList, someArray);
+//        for (String str : someList)
+//            System.out.print(" " + str);
+
         String[] someArray = {"apple", "orange", "lemon", "banana"};
 
-        List<String> someList = new ArrayList<String>();
-        someList = new ArrayList<String>();
+        ArrayList<String> someList = new ArrayList<String>();
 
-        changeArrayToArrayList(someArray,someList);
-
+        changeArrayToArrayList(someList, someArray);
 
         for (String str : someList)
             System.out.print(" " + str);
 
     }
 
-    public static void changeArrayToArrayList(String[] s, ArrayList<String> aList){
+    public static void changeArrayToArrayList(ArrayList<String> aList, String[] s){
         Collections.addAll(aList, s);
     }
 
