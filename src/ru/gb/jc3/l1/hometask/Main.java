@@ -1,5 +1,10 @@
 package ru.gb.jc3.l1.hometask;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 // 1. Написать метод, который меняет два элемента массива местами
 // (массив может быть любого ссылочного типа);
 // 2. Написать метод, который преобразует массив в ArrayList;
@@ -24,4 +29,24 @@ package ru.gb.jc3.l1.hometask;
 
 
 public class Main {
+    public static void main(String[] args) {
+
+        // Задание 2
+        String[] someArray = {"apple", "orange", "lemon", "banana"};
+
+        List<String> someList = new ArrayList<String>();
+        someList = new ArrayList<String>();
+
+        changeArrayToArrayList(someArray,someList);
+
+
+        for (String str : someList)
+            System.out.print(" " + str);
+
+    }
+
+    public static void changeArrayToArrayList(String[] s, ArrayList<String> aList){
+        Collections.addAll(aList, s);
+    }
+
 }
