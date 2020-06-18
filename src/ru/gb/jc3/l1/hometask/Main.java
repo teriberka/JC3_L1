@@ -1,5 +1,10 @@
 package ru.gb.jc3.l1.hometask;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 // 1. Написать метод, который меняет два элемента массива местами
 // (массив может быть любого ссылочного типа);
 // 2. Написать метод, который преобразует массив в ArrayList;
@@ -24,4 +29,60 @@ package ru.gb.jc3.l1.hometask;
 
 
 public class Main {
+    public static void main(String[] args) {
+        // Задание 1
+        Integer[] intArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+        Double[] doubleArray = {1.0, 2.0, 3.0};
+        String[] strArray = {"one", "two", "three", "four"};
+
+        System.out.println(Arrays.toString(intArray));
+        System.out.println(Arrays.toString(doubleArray));
+        System.out.println(Arrays.toString(strArray));
+
+        changePositionInArray(intArray, 0 ,1);
+        changePositionInArray(doubleArray, 1 ,2);
+        changePositionInArray(strArray, 0 ,5);
+
+        System.out.println(Arrays.toString(intArray));
+        System.out.println(Arrays.toString(doubleArray));
+        System.out.println(Arrays.toString(strArray));
+
+        System.out.println("");
+
+        // Задание 2
+//        String[] someArray = {"apple", "orange", "lemon", "banana"};
+//        ArrayList<String> someList = new ArrayList<String>();
+//
+//        Collections.addAll(someList, someArray);
+//        for (String str : someList)
+//            System.out.print(" " + str);
+
+        String[] someArray = {"apple", "orange", "lemon", "banana"};
+
+        ArrayList<String> someList = new ArrayList<String>();
+
+        changeArrayToArrayList(someList, someArray);
+
+        for (String str : someList)
+            System.out.print(" " + str);
+
+    }
+
+    public static void changePositionInArray(Object[] someObjects, int x, int y){
+        System.out.println("array length = " + someObjects.length);
+        if (x >= 0 && y >= 0 && x < someObjects.length && y < someObjects.length) {
+            Object tempObject = someObjects[x];
+            someObjects[x] = someObjects[y];
+            someObjects[y] = tempObject;
+        } else {
+            System.out.println("some param isn't correct, try again!");
+        }
+    }
+
+
+
+    public static void changeArrayToArrayList(ArrayList<String> aList, String[] s){
+        Collections.addAll(aList, s);
+    }
+
 }
