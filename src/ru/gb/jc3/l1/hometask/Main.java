@@ -69,7 +69,8 @@ public class Main {
     }
 
     public static void changePositionInArray(Object[] someObjects, int x, int y){
-        if (x > 0 && y > 0 && x < someObjects.length && y < someObjects.length) {
+        System.out.println("array length = " + someObjects.length);
+        if (x >= 0 && y >= 0 && x < someObjects.length && y < someObjects.length) {
             Object tempObject = someObjects[x];
             someObjects[x] = someObjects[y];
             someObjects[y] = tempObject;
